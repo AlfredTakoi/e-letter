@@ -10,7 +10,7 @@
 	$no = @$_GET['no'];
 	$sql= mysqli_query($con,"SELECT * FROM tbl_pegawai INNER JOIN tbl_posisi ON tbl_pegawai.id_posisi = tbl_posisi.id_posisi where no='$no'") or die(mysqli_error($con));
 	$row = mysqli_fetch_array($sql);
- ?>
+?>
 <div class="panel panel-default">
   <div class="panel-heading">Edit Data Pegawai</div>
   <div class="panel-body">
@@ -24,7 +24,7 @@
 			<div class="form-group col-md-12">
 				<label for="InputNama">Nama Pegawai</label>
 				<input type="hidden" name="no" value="<?php echo $row['no']?>">
-				<input type="text" class="form-control" autofocus required="required" id="InputNama" name="nama" placeholder="Nama Pegawai" value="<?php echo $row['nama_pegawai']?>">
+				<input type="text" class="form-control" autofocus required="required" id="InputNama" name="nama_pegawai" placeholder="Nama Pegawai" value="<?php echo $row['nama_pegawai']?>">
 				<span class="help-block"></span>
 			</div>
 			<div class="form-group col-md-12">

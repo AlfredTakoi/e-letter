@@ -14,7 +14,10 @@ if (isset($_POST['tambah'])) {
 	$id_user = $_SESSION['id_user'];
 
 	//insert data
-	mysqli_query($con,"INSERT INTO tbl_surat_keluar VALUES('','$no','$tanggal','$sifat','$pengirim','$perihal','$tertuju','$alamat','$isi_surat','$lampiran','$id_user')");
+	$data = mysqli_query($con,"INSERT INTO tbl_surat_keluar VALUES('','$no','$tanggal','$sifat','$pengirim','$perihal','$tertuju','$alamat','$isi_surat','$lampiran','$id_user')");
+	if(!$data){
+		die(mysqli_error($con));
+	}
 	echo "<script>alert('Surat Keluar Berhasil ditambahkan');window.location='data.php';</script>";
 
 } elseif (isset($_POST['edit'])){
@@ -29,7 +32,12 @@ if (isset($_POST['tambah'])) {
 	$isi_surat = trim(mysqli_real_escape_string($con, $_POST['isi_surat']));
 	$lampiran = trim(mysqli_real_escape_string($con, $_POST['lampiran']));
 	$id_user = $_SESSION['id_user'];
+
+	// update data
 	$data = mysqli_query($con, "UPDATE tbl_surat_keluar set no_surat ='$no', tanggal_surat='$tanggal', sifat = '$sifat', pengirim = '$pengirim', perihal = '$perihal', tertuju = '$tertuju', alamat = '$alamat', isi_surat_ringkas = '$isi_surat', lampiran = '$lampiran', id_user = '$id_user' WHERE id = '$id'");
+	if(!$data){
+		die(mysqli_error($con));
+	}
 	echo "<script>alert('Surat Keluar Berhasil di ubah');window.location='data.php';</script>";
 }
 
