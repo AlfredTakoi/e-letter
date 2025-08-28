@@ -47,10 +47,8 @@
                 if(isset($_POST['login'])){
                     
                     $username   = $_POST['user'];
-                    $password   = sha1($_POST['pass']);
-                    $level      = $_POST['level'];
-                    
-                    $cek_user = mysqli_query($con, "SELECT * FROM tbl_user WHERE username = '$username' and level='$level'");
+                    $password   = sha1($_POST['pass']); 
+                    $cek_user = mysqli_query($con, "SELECT * FROM tbl_user WHERE username = '$username'");
                     $user_valid = mysqli_fetch_array($cek_user);
                     //uji jika username terdaftar
                     if ($user_valid) {
@@ -65,19 +63,18 @@
                             $_SESSION['nama_user'] = $user_valid['nama_user'];
                             $_SESSION['level'] = $user_valid['level'];
 
-
                             //uji level user
-                            if ($level == "Super Admin") {
+                            if ($user_valid['level'] == "Super Admin") {
                                 @$_SESSION['Super Admin'] = $user_valid['id_user'] ;
                                 header('location:../menu');
-                            } elseif ($level == "Lurah") {
+                            } elseif ($user_valid['level'] == "Lurah") {
                                 @$_SESSION['Lurah'] = $user_valid['id_user'] ;
                                 header('location:../menu');
-                            } elseif ($level == "Sekretaris Lurah") {
+                            } elseif ($user_valid['level'] == "Sekretaris Lurah") {
                                 @$_SESSION['Sekretaris Lurah'] = $user_valid['id_user'] ;
                                 header('location:../menu');
-                            } elseif ($level == "Umum") {
-                                @$_SESSION['Umum'] = $user_valid['id_user'] ;
+                            } elseif ($user_valid['level'] == "Staff") {
+                                @$_SESSION['Staff'] = $user_valid['id_user'] ;
                                 header('location:../menu');
                             }
                         } else { ?>
@@ -108,15 +105,6 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password" name="pass" class="form-control" placeholder="Password" required autofocus/>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <select name="level" class="form-control" required>
-                            <option selected="selected">Pilih Level User</option>
-                            <option value="Super Admin">Super Admin</option>
-                            <option value="Lurah">Lurah</option>
-                            <option value="Sekretaris Lurah">Sekretaris</option>
-                            <option value="Umum">Umum</option>
-                        </select>
                     </div>
                     <div class="form-group">
                         <input type="submit" name="login" class="btn btn-primary btn-block" value="Log In" />

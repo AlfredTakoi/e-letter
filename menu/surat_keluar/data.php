@@ -41,7 +41,7 @@
 						<td><?=$data['perihal']?></td>
 						<td>
 						<center>
-							<?php if($_SESSION['level'] == "Lurah" || $_SESSION['level'] == "Umum"){ ?>
+							<?php if($_SESSION['level'] == "Lurah" || $_SESSION['level'] == "Staff"){ ?>
 								<a href="lihat.php?id=<?php echo $data['id']; ?>" class="btn btn-default btn-xs"><i class="glyphicon glyphicon-eye-open"></i></a>
 							<?php } else if($_SESSION['level'] == "Super Admin" || $_SESSION['level'] == "Sekretaris Lurah") {?>
 							<a href="edit.php?id=<?php echo $data['id']; ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-pencil"></i></a>

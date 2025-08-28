@@ -40,7 +40,7 @@
                     <option value="Super Admin">Super Admin</option>
                     <option value="Lurah">Lurah</option>
                     <option value="Sekretaris Lurah">Sekretaris</option>
-                    <option value="Umum">Umum</option>
+                    <option value="Staff">Staff</option>
                 </select>
             </div>
 			<div class="form-actions col-md-12">
