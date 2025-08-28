@@ -23,5 +23,4 @@
 		$data = mysqli_query($con, "UPDATE tbl_user set nama_user ='$nama_user', username ='$username', pass = '$pass', password = sha1('$pass'), level = '$level' WHERE id_user = '$id_user'");
 		echo "<script>alert('Data User Berhasil Di Update');window.location='data.php';</script>";
 	}
-		
 ?>

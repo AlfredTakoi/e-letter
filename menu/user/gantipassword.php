@@ -28,7 +28,7 @@
 			</div>
 			<div class="form-group col-md-12">
 				<label for="InputPassword">Password</label>
-				<input type="text" class="form-control" required="required" id="InputPassword" name="pass" placeholder="No. Tlp" value="<?php echo $row['pass']?>">
+				<input type="password" class="form-control" required="required" id="InputPassword" name="pass" placeholder="No. Tlp" value="<?php echo $row['pass']?>">
 				<span class="help-block"></span>
 			</div>
 			<div class="form-actions col-md-12">

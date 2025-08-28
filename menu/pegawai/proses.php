@@ -10,7 +10,8 @@ if (isset($_POST['tambah'])) {
 	$id_user = trim(mysqli_real_escape_string($con, $_SESSION['id_user']));
 
 	//insert data
-	$data = mysqli_query($con,"INSERT INTO tbl_pegawai VALUES('','$nik','$nama','$id_posisi','$alamat','$no_tlp','$id_user')");
+	$data = mysqli_query($con, "INSERT INTO tbl_pegawai (nik, nama_pegawai, id_posisi, alamat, no_tlp, id_user) 
+								VALUES ('$nik','$nama','$id_posisi','$alamat','$no_tlp','$id_user')");
 	if(!$data){
 		die(mysqli_error($con));
 	}
