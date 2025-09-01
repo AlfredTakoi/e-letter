@@ -1,4 +1,4 @@
-# 📌 Letter and Employee Management Application (PHP Native)
+# 📌 E-Letter Kelurahan Baros (PHP Native)
 
 A simple PHP-based application designed to manage employee data, user data, and incoming and outgoing mail. This application supports multiple users with different access levels and provides reporting features based on date ranges.
 
