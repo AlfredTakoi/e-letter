@@ -36,7 +36,7 @@ A simple PHP-based application designed to manage employee data, user data, and 
 
 ## ⚙️ Installation Method
 1. Clone or download this repository
-```git clone https://github.com/username/project-name.git```
+```git clone https://github.com/AlfredTakoi/e-letter.git```
 
 2. Move the project folder to the web server folder (for example, `htdocs` if using XAMPP).
 
